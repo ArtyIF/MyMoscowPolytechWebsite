@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Сайт на Bootstrap (задание 4 лабораторной работы 3 по направлению "Разработка веб-приложений", Артём Фомин)
+    </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body class="bg-light">
+    <div class="container">
+        <div class="shadow bg-white card my-2">
+            <div class="card-header"><h1>Пример 1. Text </h1><small><a href="index.html">Возврат на главную страницу</a></small></div>
+
+            <div class="card-body">
+                <h2>Заголовки (<code>&lt;h1-h6&gt;</code>)</h2>
+                <h1>Заголовок 1</h1>
+                <h2>Заголовок 2</h2>
+                <h3>Заголовок 3</h3>
+                <h4>Заголовок 4</h4>
+                <h5>Заголовок 5</h5>
+                <h6>Заголовок 6</h6>
+                <hr>
+
+                <h2>Заголовки дисплея (<code>&lt;h1 class="display-1-4"&gt;</code>)</h2>
+                <h1 class="display-1">Заголовок дисплея 1</h1>
+                <h1 class="display-2">Заголовок дисплея 2</h1>
+                <h1 class="display-3">Заголовок дисплея 3</h1>
+                <h1 class="display-4">Заголовок дисплея 4</h1>
+                <hr>
+
+                <h2>Лид (<code>&lt;p class="lead"&gt;</code>)</h2>
+                <p>Обычный параграф для сравнения</p>
+                <p class="lead">Выдающийся параграф</p>
+                <hr>
+
+                <h2>Блочный текстовый элемент (<code>&lt;mark, del, s, ins, u, small, strong, em&gt;</code>)</h2>
+                <p>Тут <mark>подсвечен</mark> текст</p>
+                <p>Тут <del>удалён</del> текст</p>
+                <p>Тут <s>зачёркнут</s> текст</p>
+                <p>Тут <ins>вставлен</ins> текст</p>
+                <p>Тут <u>подчёркнут</u> текст</p>
+                <p>Тут <small>мелкий</small> текст</p>
+                <p>Тут <strong>жирный</strong> текст</p>
+                <p>Тут <em>курсивный</em> текст</p>
+                <hr>
+
+                <h2>Сокращения (<code>&lt;abbr&gt;</code>)</h2>
+                <p><abbr title="Cascading Style Sheets">CSS</abbr> позволяет украсить страницу по своему вкусу.</p>
+                <hr>
+
+                <h2>Цитаты (<code>&lt;blockquote class="blockquote"&gt;</code> и
+                    <code>&lt;footer class="blockquote-footer"&gt;</code>)</h2>
+                <blockquote class="blockquote">
+                    <p class="mb-0">А вы знали, что пока я не открыл гравитацию, люди могли летать? Мамой клянусь, так и
+                        было.</p>
+                    <footer class="blockquote-footer">Исаак Ньютон</footer>
+                </blockquote>
+                <hr>
+
+                <h2>Списки</h2>
+                <h3>Маркированные (<code>&lt;ul&gt;</code>)</h3>
+                <ul>
+                    <li>Элемент 1</li>
+                    <li>Элемент 2
+                        <ul>
+                            <li>Под-элемент 1</li>
+                            <li>Под-элемент 2</li>
+                            <li>Под-элемент 3</li>
+                        </ul>
+                    </li>
+                    <li>Элемент 3</li>
+                </ul>
+                <h3>Нумерованные (<code>&lt;ol&gt;</code>)</h3>
+                <ol>
+                    <li>Элемент 1</li>
+                    <li>Элемент 2
+                        <ol>
+                            <li>Под-элемент 1</li>
+                            <li>Под-элемент 2</li>
+                            <li>Под-элемент 3</li>
+                        </ol>
+                    </li>
+                    <li>Элемент 3</li>
+                </ol>
+                <h3>Блочные (<code>&lt;ul class="list-inline"&gt;</code> и
+                    <code>&lt;li class="list-inline-item"&gt;</code>)
+                </h3>
+                <ul class="list-inline">
+                    <li class="list-inline-item">Элемент 1</li>
+                    <li class="list-inline-item">Элемент 2</li>
+                    <li class="list-inline-item">Элемент 3</li>
+                </ul>
+                <h3>Списки описаний (<code>&lt;dl class="row"&gt;</code>, <code>&lt;dt class="col-sm-3"&gt;</code> и
+                    <code>&lt;dd class="col-sm-9"&gt;</code>)</h3>
+                <dl class="row">
+                    <dt class="col-sm-3">Термин 1</dt>
+                    <dd class="col-sm-9">Определение 1</dd>
+
+                    <dt class="col-sm-3">Термин 2</dt>
+                    <dd class="col-sm-9">Определение 2</dd>
+
+                    <dt class="col-sm-3">Термин 3</dt>
+                    <dd class="col-sm-9">Определение 3</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
