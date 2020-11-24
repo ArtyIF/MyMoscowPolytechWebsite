@@ -17,7 +17,7 @@ function get_disc_human_name(string $disciplineID) {
 }
 
 function get_lab_works_count(string $disciplineID) : int {
-    return count(glob("iframes/" . $disciplineID . "*", GLOB_ONLYDIR));
+    return count(glob("iframes/" . $disciplineID . "/lr*", GLOB_ONLYDIR));
 }
 
 function get_sections_count(string $disciplineID, int $labWorkID) : int {
