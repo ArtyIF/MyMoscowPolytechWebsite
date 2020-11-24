@@ -13,6 +13,10 @@ exec('git pull', $gitOutput);
 foreach ($gitOutput as $gitOutputLine) {
     echo $gitOutputLine . "\n";
 }
+exec('echo "Привет,"; echo "мир"', $gitOutput);
+foreach ($gitOutput as $gitOutputLine) {
+    echo $gitOutputLine . "\n";
+}
 ?></samp></pre>
 </body>
 </html>
