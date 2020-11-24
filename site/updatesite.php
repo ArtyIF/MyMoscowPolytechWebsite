@@ -8,14 +8,11 @@
     <h1>Обновление сайта с GitHub</h1>
     <h2>Вывод команды</h2>
     <pre><samp><?php
-$gitOutput = [];
-exec('git pull', $gitOutput);
-foreach ($gitOutput as $gitOutputLine) {
-    echo $gitOutputLine . "\n";
-}
-exec('echo "Привет,"; echo "мир"', $gitOutput);
-foreach ($gitOutput as $gitOutputLine) {
-    echo $gitOutputLine . "\n";
+$gitOutput = `git pull`;
+if ($gitOutput != NULL) {
+    echo $gitOutput;
+} else {
+    echo "Произошла ошибка или программа ничего не вывела";
 }
 ?></samp></pre>
 </body>
