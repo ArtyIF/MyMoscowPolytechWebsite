@@ -15,85 +15,13 @@
         <?php
         require("globals.php");
 
-        class LabWork {
-            public int $labWorkID;
-            public array $childSectionIDs;
-            
-            function __construct($labWorkID) {
-                $this->labWorkID = $labWorkID;
-                $this->childSectionIDs = [];
-            }
-
-            function add_section($sectionName) {
-                $sectionID = (int)rtrim($sectionName, ".html");
-                array_push($this->childSectionIDs, $sectionID);
-            }
-
-            function sort_sections() {
-                sort($this->childSectionIDs);
-            }
-        }
-
-        class Discipline {
-            public string $disciplineID;
-            public string $disciplineHumanName;
-            public array $childLabWorks;
-            
-            function __construct($disciplineID, $disciplineHumanName) {
-                $this->disciplineID = $disciplineID;
-                $this->disciplineHumanName = $disciplineHumanName;
-                $this->childLabWorks = [];
-            }
-
-            function add_lab_work($labWorkName) {
-                $labWorkID = (int)substr($labWorkName, 2);
-                $labWork = new LabWork($labWorkID);
-                array_push($this->childLabWorks, $labWork);
-                return $labWork;
-            }
-
-            function lab_work_compare_func(LabWork $a, LabWork $b) {
-                return $a->labWorkID - $b->labWorkID;
-            }
-
-            function sort_lab_works() {
-                usort($this->childLabWorks, ["Discipline", "lab_work_compare_func"]);
-            }
-        }
-
-        $disciplines = [];
-
-        chdir("iframes");
-        $disciplineDirs = glob("*" , GLOB_ONLYDIR);
-        foreach ($disciplineDirs as $disciplineDir) {
-            $discipline = new Discipline($disciplineDir, get_disc_human_name($disciplineDir));
-            array_push($disciplines, $discipline);
-            
-            chdir($disciplineDir);
-            $labWorkDirs = glob("*" , GLOB_ONLYDIR);
-            foreach ($labWorkDirs as $labWorkDir) {
-                $labWork = $discipline->add_lab_work($labWorkDir);
-
-                chdir($labWorkDir);
-                $sectionFiles = glob("*.html");
-                foreach ($sectionFiles as $sectionFile) {
-                    $labWork->add_section($sectionFile);
-                }
-                $labWork->sort_sections();
-                chdir("..");
-            }
-            $discipline->sort_lab_works();
-            chdir("..");
-        }
-        chdir("..");
-
-        foreach ($disciplines as $discipline) {
-            echo "<button class='discipline-group-button group-" . $discipline->disciplineID . "'>" . $discipline->disciplineHumanName . "</button>";
-            echo "<div class='discipline-group group-" . $discipline->disciplineID . "'><div class='discipline-group-content'>";
-            foreach ($discipline->childLabWorks as $labWork) {
+        foreach ($disciplineList as $disciplineID => $disciplineHumanName) {
+            echo "<button class='discipline-group-button group-" . $disciplineID . "'>" . $disciplineHumanName . "</button>";
+            echo "<div class='discipline-group group-" . $disciplineID . "'><div class='discipline-group-content'>";
+            for ($labWorkID=1; $i <= get_lab_works_count($disciplineID); $labWorkID++) { 
                 echo "<h4>Лабораторная работа " . $labWork->labWorkID . "</h4>";
-                foreach ($labWork->childSectionIDs as $sectionID) {
-                    echo "<p><a href='/view.php?disc=" . $discipline->disciplineID . "&lr=" . $labWork->labWorkID . "&sect=" . $sectionID . "'>Раздел " . $sectionID . "</a></p>";
+                for ($sectionID=1; $i <= get_sections_count($disciplineID, $labWorkID); $sectionID++) {
+                    echo "<p><a href='/view.php?disc=" . $disciplineID . "&lr=" . $labWorkID . "&sect=" . $sectionID . "'>Раздел " . $sectionID . "</a></p>";
                 }
             }
             echo "</div></div>";
