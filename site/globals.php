@@ -7,7 +7,7 @@ $disciplineList = [
     // "название папки дисциплины" => "человеко-читабельное название дисциплины",
 ];
 
-function get_disc_human_name(string $disciplineID)
+function get_discipline_human_name(string $disciplineID)
 {
     global $disciplineList;
     if (array_key_exists($disciplineID, $disciplineList)) {
@@ -69,7 +69,7 @@ function get_all_lab_works() {
     chdir("iframes");
     $disciplineDirs = glob("*" , GLOB_ONLYDIR);
     foreach ($disciplineDirs as $disciplineDir) {
-        $discipline = new Discipline($disciplineDir, get_disc_human_name($disciplineDir));
+        $discipline = new Discipline($disciplineDir, get_discipline_human_name($disciplineDir));
         array_push($disciplines, $discipline);
         
         chdir($disciplineDir);

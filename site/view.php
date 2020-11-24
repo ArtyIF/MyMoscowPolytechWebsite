@@ -5,7 +5,7 @@
     <title>
     <?php
     require("globals.php");
-    echo get_disc_human_name($_GET['disc']) . ", лабораторная работа " . $_GET['lr'] . ", раздел " . $_GET['sect'] . " - Сайт Артёма Фомина";
+    echo get_discipline_human_name($_GET['disc']) . ", лабораторная работа " . $_GET['lr'] . ", раздел " . $_GET['sect'] . " - Сайт Артёма Фомина";
     ?>
     </title>
     <link rel="stylesheet" href="/static/css/style.css" type="text/css">
@@ -34,11 +34,11 @@
                 if ($nextLabWorkIndex >= count($labWorksShort)) {
                     $nextLabWorkIndex = 0;
                 }
-                echo "<a class='header-previous-section' title='" . get_disc_human_name($labWorksShort[$previousLabWorkIndex][0]) . ", лабораторная работа " . $labWorksShort[$previousLabWorkIndex][1] . ", раздел " . $labWorksShort[$previousLabWorkIndex][2] . "' href='/view.php?disc=" . $labWorksShort[$previousLabWorkIndex][0] . "&lr=" . $labWorksShort[$previousLabWorkIndex][1] . "&sect=" . $labWorksShort[$previousLabWorkIndex][2] . "'>&lt; Предыдущая работа</a>";
+                echo "<a class='header-previous-section' title='" . get_discipline_human_name($labWorksShort[$previousLabWorkIndex][0]) . ", лабораторная работа " . $labWorksShort[$previousLabWorkIndex][1] . ", раздел " . $labWorksShort[$previousLabWorkIndex][2] . "' href='/view.php?disc=" . $labWorksShort[$previousLabWorkIndex][0] . "&lr=" . $labWorksShort[$previousLabWorkIndex][1] . "&sect=" . $labWorksShort[$previousLabWorkIndex][2] . "'>&lt; Предыдущая работа</a>";
             ?>
-            <span class="header-page-title-itself"><?php echo get_disc_human_name($_GET['disc']) . ", лабораторная работа " . $_GET['lr'] . ", раздел " . $_GET['sect'] ?></span>
+            <span class="header-page-title-itself"><?php echo get_discipline_human_name($_GET['disc']) . ", лабораторная работа " . $_GET['lr'] . ", раздел " . $_GET['sect'] ?></span>
             <?php
-                echo "<a class='header-next-section' title='" . get_disc_human_name($labWorksShort[$nextLabWorkIndex][0]) . ", лабораторная работа " . $labWorksShort[$nextLabWorkIndex][1] . ", раздел " . $labWorksShort[$nextLabWorkIndex][2] . "' href='/view.php?disc=" . $labWorksShort[$nextLabWorkIndex][0] . "&lr=" . $labWorksShort[$nextLabWorkIndex][1] . "&sect=" . $labWorksShort[$nextLabWorkIndex][2] . "'>Следующая работа &gt;</a>";
+                echo "<a class='header-next-section' title='" . get_discipline_human_name($labWorksShort[$nextLabWorkIndex][0]) . ", лабораторная работа " . $labWorksShort[$nextLabWorkIndex][1] . ", раздел " . $labWorksShort[$nextLabWorkIndex][2] . "' href='/view.php?disc=" . $labWorksShort[$nextLabWorkIndex][0] . "&lr=" . $labWorksShort[$nextLabWorkIndex][1] . "&sect=" . $labWorksShort[$nextLabWorkIndex][2] . "'>Следующая работа &gt;</a>";
             ?>
         </div>
     </header>
