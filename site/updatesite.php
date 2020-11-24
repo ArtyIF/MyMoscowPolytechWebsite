@@ -7,6 +7,12 @@
 <body>
     <h1>Обновление сайта с GitHub</h1>
     <h2>Вывод команды</h2>
-    <pre><samp><?php echo exec('git pull'); ?></samp></pre>
+    <pre><samp><?php
+$gitOutput = [];
+exec('git pull', $gitOutput);
+foreach ($gitOutput as $gitOutputLine) {
+    echo $gitOutputLine . "\n";
+}
+?></samp></pre>
 </body>
 </html>
