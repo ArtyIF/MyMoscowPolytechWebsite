@@ -58,6 +58,8 @@ h1, h2 {
     padding: 8px;
     background-color: #00000080;
     color: white;
+    display: flex;
+    justify-content: space-between;
 }
 
 .placeholder {
