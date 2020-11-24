@@ -1,5 +1,5 @@
 <?php
-$discdict = [
+$disciplineList = [
     "poya" => "Проблемно-ориентированные языки",
     "vss" => "Вычислительные системы и сети",
     "webapp" => "Разработка веб-приложений",
@@ -7,13 +7,13 @@ $discdict = [
     // "название папки дисциплины" => "человеко-читабельное название дисциплины",
 ];
 
-function get_disc_human_name(string $discid)
+function get_disc_human_name(string $disciplineID)
 {
-    global $discdict;
-    if (array_key_exists($discid, $discdict)) {
-        return $discdict[$discid];
+    global $disciplineList;
+    if (array_key_exists($disciplineID, $disciplineList)) {
+        return $disciplineList[$disciplineID];
     } else {
-        return "ОШИБКА: неизвестный ID дисциплины: " . $discid;
+        return "ОШИБКА: неизвестный ID дисциплины: " . $disciplineID;
     }
 }
 ?>
