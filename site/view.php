@@ -7,7 +7,6 @@
     require("globals.php");
     echo get_disc_human_name($_GET['disc']) . ", лабораторная работа " . $_GET['lr'] . ", раздел " . $_GET['sect'] . " - Сайт Артёма Фомина";
     ?>
-    Сайт Артёма Фомина
     </title>
     <link rel="stylesheet" href="/static/css/style.css" type="text/css">
     <link href="/static/css/prism.css" rel="stylesheet" />
