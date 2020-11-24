@@ -8,7 +8,7 @@
     <h1>Обновление сайта с GitHub</h1>
     <h2>Вывод команды</h2>
     <pre><samp><?php
-$gitOutput = `git pull --verbose`;
+$gitOutput = `git pull`;
 if ($gitOutput != NULL) {
     echo $gitOutput;
 } else {
