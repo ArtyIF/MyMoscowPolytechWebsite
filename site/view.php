@@ -5,7 +5,7 @@
     <title>
     <?php
     require("globals.php");
-    echo get_disc_human_name($_GET['disc']) . ", лабораторная работа " . $_GET['lr']; . ", раздел " . $_GET['sect'] . " - Сайт Артёма Фомина";
+    echo get_disc_human_name($_GET['disc']) . ", лабораторная работа " . $_GET['lr'] . ", раздел " . $_GET['sect'] . " - Сайт Артёма Фомина";
     ?>
     Сайт Артёма Фомина
     </title>
@@ -16,7 +16,7 @@
     <header class="header-itself">
         <h1><button class="header-button-left" id="homePageButton">&lt; Главная страница</button> Сайт Артёма Фомина <button class="header-button-right" id="headerHideButton">Скрыть шапку</button> <button class="header-button-right" id="codeToggleButton">Показать код</button></h1>
         <div class="header-page-title">
-            <?php echo get_disc_human_name($_GET['disc']) . ", лабораторная работа " . $_GET['lr']; . ", раздел " . $_GET['sect'] ?>
+            <?php echo get_disc_human_name($_GET['disc']) . ", лабораторная работа " . $_GET['lr'] . ", раздел " . $_GET['sect'] ?>
         </div>
     </header>
     <button class="header-pin-button" id="headerShowButton">Показать шапку</button>
