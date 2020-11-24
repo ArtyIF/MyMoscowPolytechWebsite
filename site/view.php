@@ -14,7 +14,7 @@
 </head>
 <body>
     <header class="header-itself">
-        <h1>Сайт Артёма Фомина <button class="header-button" id="headerHideButton">Скрыть шапку</button> <button class="header-button" id="codeToggleButton">Показать код</button></h1>
+        <h1><button class="header-button-left" id="homePageButton">&lt; Главная страница</button> Сайт Артёма Фомина <button class="header-button-right" id="headerHideButton">Скрыть шапку</button> <button class="header-button-right" id="codeToggleButton">Показать код</button></h1>
         <div class="header-page-title">
             <?php echo get_disc_human_name($_GET['disc']) . ", лабораторная работа " . $_GET['lr']; ?>
         </div>
@@ -70,6 +70,7 @@
         $("#headerShowButton").on("click", showHeader);
         $("#headerHideButton").on("click", hideHeader);
         $("#codeToggleButton").one("click", showCode);
+        $("#homePageButton").on("click", () => { window.location.href = "/" });
     </script>
 </body>
 </html>

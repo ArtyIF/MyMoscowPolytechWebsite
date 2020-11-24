@@ -129,7 +129,20 @@ h1, h2 {
     z-index: 100;
 }
 
-.header-button {
+.header-button-left {
+    float: right;
+    background-color: green;
+    color: white;
+    padding: 4px 8px;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 16px;
+    margin-left: 8px;
+}
+
+.header-button-right {
     float: right;
     background-color: green;
     color: white;
