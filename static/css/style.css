@@ -155,6 +155,16 @@ h1, h2 {
     margin-left: 8px;
 }
 
+.header-previous-section {
+    float: left;
+    color: inherit;
+}
+
+.header-next-section {
+    float: right;
+    color: inherit;
+}
+
 @keyframes headerShow {
     0% {
         top: -64px;
