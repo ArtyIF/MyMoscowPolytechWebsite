@@ -130,7 +130,7 @@ h1, h2 {
 }
 
 .header-button-left {
-    float: right;
+    float: left;
     background-color: green;
     color: white;
     padding: 4px 8px;
