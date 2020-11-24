@@ -18,9 +18,9 @@
         foreach ($disciplineList as $disciplineID => $disciplineHumanName) {
             echo "<button class='discipline-group-button group-" . $disciplineID . "'>" . $disciplineHumanName . "</button>";
             echo "<div class='discipline-group group-" . $disciplineID . "'><div class='discipline-group-content'>";
-            for ($labWorkID=1; $i <= get_lab_works_count($disciplineID); $labWorkID++) { 
+            for ($labWorkID=1; $labWorkID <= get_lab_works_count($disciplineID); $labWorkID++) { 
                 echo "<h4>Лабораторная работа " . $labWork->labWorkID . "</h4>";
-                for ($sectionID=1; $i <= get_sections_count($disciplineID, $labWorkID); $sectionID++) {
+                for ($sectionID=1; $sectionID <= get_sections_count($disciplineID, $labWorkID); $sectionID++) {
                     echo "<p><a href='/view.php?disc=" . $disciplineID . "&lr=" . $labWorkID . "&sect=" . $sectionID . "'>Раздел " . $sectionID . "</a></p>";
                 }
             }
