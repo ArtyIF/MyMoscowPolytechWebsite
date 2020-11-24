@@ -21,7 +21,7 @@
                 foreach ($disciplines as $discipline) {
                     foreach ($discipline->childLabWorks as $labWork) {
                         foreach ($labWork->childSectionIDs as $sectionID) {
-                            array_push($labWorksShort, [$discipline->$disciplineID, $labWork->$labWorkID, $sectionID]);
+                            array_push($labWorksShort, [$discipline->disciplineID, $labWork->labWorkID, $sectionID]);
                         }
                     }
                 }
