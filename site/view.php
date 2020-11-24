@@ -15,7 +15,7 @@
     <header class="header-itself">
         <h1><button class="header-button-left" id="homePageButton">&lt; Главная страница</button> Сайт Артёма Фомина <button class="header-button-right" id="headerHideButton">Скрыть шапку</button> <button class="header-button-right" id="codeToggleButton">Показать код</button></h1>
         <div class="header-page-title">
-            <?php echo get_disc_human_name($_GET['disc']) . ", лабораторная работа " . $_GET['lr'] . ", раздел " . $_GET['sect'] ?>
+            <a href="#">&lt; Ссылка пока не работает</a> <?php echo get_disc_human_name($_GET['disc']) . ", лабораторная работа " . $_GET['lr'] . ", раздел " . $_GET['sect'] ?> <a href="#">Ссылка пока не работает &gt;</a>
         </div>
     </header>
     <button class="header-pin-button" id="headerShowButton">Показать шапку</button>
