@@ -7,10 +7,6 @@
 <body>
     <h1>Обновление сайта с GitHub</h1>
     <h2>Вывод команды</h2>
-    <?php
-    echo '<pre><samp>';
-    echo exec('git pull');
-    echo '</samp></pre>';
-    ?>
+    <pre><samp><?php echo exec('git pull'); ?></samp></pre>
 </body>
 </html>
