@@ -46,8 +46,8 @@
         }
         
         <?php
-        foreach ($disciplines as $discipline) {
-            echo "$('.discipline-group-button.group-" . $discipline->disciplineID . "').one('click', {disciplineID: '" . $discipline->disciplineID . "'}, revealGroup);\n";
+        foreach ($disciplineList as $disciplineID => $disciplineHumanName) {
+            echo "$('.discipline-group-button.group-" . $disciplineID . "').one('click', {disciplineID: '" . $disciplineID . "'}, revealGroup);\n";
         }
         ?>
     </script>
