@@ -2,7 +2,13 @@
 <html lang="ru" class="fullscreen">
 <head>
     <meta charset="UTF-8">
-    <title>Сайт Артёма Фомина</title>
+    <title>
+    <?php
+    require("globals.php");
+    echo get_disc_human_name($_GET['disc']) . ", лабораторная работа " . $_GET['lr'] . " - Сайт Артёма Фомина";
+    ?>
+    Сайт Артёма Фомина
+    </title>
     <link rel="stylesheet" href="/static/css/style.css" type="text/css">
     <link href="/static/css/prism.css" rel="stylesheet" />
 </head>
@@ -13,10 +19,7 @@
             <span>Навигация:</span>
             <a href="index.php" class="breadcrumbs-link">Главная страница</a>
             &gt;
-            <?php
-            require("globals.php");
-            echo "<span>" . get_disc_human_name($_GET['disc']) . "</a>";
-            ?>
+            <?php echo "<span>" . get_disc_human_name($_GET['disc']) . "</a>"; ?>
             &gt;
             <?php echo "<span>Лабораторная работа " . $_GET['lr'] . "</span>"; ?>
             &gt;
