@@ -15,7 +15,31 @@
     <header class="header-itself">
         <h1><button class="header-button-left" id="homePageButton">&lt; Главная страница</button> Сайт Артёма Фомина <button class="header-button-right" id="headerHideButton">Скрыть шапку</button> <button class="header-button-right" id="codeToggleButton">Показать код</button></h1>
         <div class="header-page-title">
-            <a class="header-previous-section" href="#">&lt; Ссылка пока не работает</a> <span class="header-page-title-itself"><?php echo get_disc_human_name($_GET['disc']) . ", лабораторная работа " . $_GET['lr'] . ", раздел " . $_GET['sect'] ?></span> <a class="header-next-section" href="#">Ссылка пока не работает &gt;</a>
+            <?php
+                $disciplines = get_all_lab_works();
+                $labWorksShort = [];
+                foreach ($disciplines => $discipline) {
+                    foreach ($discipline->childLabWorks => $labWork) {
+                        foreach ($labWork->childSectionIDs => $sectionID) {
+                            array_push($labWorksShort, [$discipline->$disciplineID, $labWork->$labWorkID, $sectionID]);
+                        }
+                    }
+                }
+                $currentLabWorkIndex = array_search([$_GET['disc'], (int)$_GET['lr'], (int)$_GET['sect']], $labWorksShort);
+                $previousLabWorkIndex = $currentLabWorkIndex - 1;
+                if ($previousLabWorkIndex < 0) {
+                    $previousLabWorkIndex = count($labWorksShort) - 1;
+                }
+                $nextLabWorkIndex = $currentLabWorkIndex + 1;
+                if ($nextLabWorkIndex >= count($labWorksShort)) {
+                    $nextLabWorkIndex = 0;
+                }
+                echo "<a class='header-previous-section' href='/view.php?disc=" . $labWorksShort[$previousLabWorkIndex][0] . "&lr=" . $labWorksShort[$previousLabWorkIndex][1] . "&sect=" . $labWorksShort[$previousLabWorkIndex][2] . "'>&lt; Предыдущая работа</a>";
+            ?>
+            <span class="header-page-title-itself"><?php echo get_disc_human_name($_GET['disc']) . ", лабораторная работа " . $_GET['lr'] . ", раздел " . $_GET['sect'] ?></span>
+            <?php
+                echo "<a class='header-next-section' href='/view.php?disc=" . $labWorksShort[$nextLabWorkIndex][0] . "&lr=" . $labWorksShort[$nextLabWorkIndex][1] . "&sect=" . $labWorksShort[$nextLabWorkIndex][2] . "'>Следующая работа &gt;</a>";
+            ?>
         </div>
     </header>
     <button class="header-pin-button" id="headerShowButton">Показать шапку</button>
