@@ -8,10 +8,6 @@
 <body>
     <header>
         <h1>Сайт Артёма Фомина</h1>
-        <div class="breadcrumbs">
-            <span>Навигация:</span>
-            <span class="breadcrumbs-current">Главная страница</span>
-        </div>
     </header>
 
     <main>

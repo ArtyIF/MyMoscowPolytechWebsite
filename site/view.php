@@ -15,15 +15,8 @@
 <body>
     <header class="header-itself">
         <h1>Сайт Артёма Фомина <button class="header-button" id="headerHideButton">Скрыть шапку</button> <button class="header-button" id="codeToggleButton">Показать код</button></h1>
-        <div class="breadcrumbs">
-            <span>Навигация:</span>
-            <a href="index.php" class="breadcrumbs-link">Главная страница</a>
-            &gt;
-            <?php echo "<span>" . get_disc_human_name($_GET['disc']) . "</a>"; ?>
-            &gt;
-            <?php echo "<span>Лабораторная работа " . $_GET['lr'] . "</span>"; ?>
-            &gt;
-            <?php echo "<span class='breadcrumbs-current'>Раздел " . $_GET['sect'] . "</span>"; ?>
+        <div class="header-page-title">
+            <?php echo get_disc_human_name($_GET['disc']) . ", лабораторная работа " . $_GET['lr']; ?>
         </div>
     </header>
     <button class="header-pin-button" id="headerShowButton">Показать шапку</button>
