@@ -165,6 +165,10 @@ h1, h2 {
     color: inherit;
 }
 
+.header-page-title-itself {
+    text-align: center;
+}
+
 @keyframes headerShow {
     0% {
         top: -64px;
