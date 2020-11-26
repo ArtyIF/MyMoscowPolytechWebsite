@@ -75,7 +75,7 @@
             $("#iframePre").attr("hidden", false);
 
             $("#codeToggleButton").one("click", hideCode);
-            $("#codeToggleButton").text("Скрыть код");
+            $("#codeToggleButton").text("Вернуться к странице");
 
             hideHeader();
         }
