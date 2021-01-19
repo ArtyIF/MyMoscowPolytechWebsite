@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" manifest="artyfortest.cache">
 <head>
     <meta charset="UTF-8">
     <title>ЛР5 Раздел 1</title>
@@ -12,15 +12,34 @@
         </nav>
         <hr>
     </header>
-    <main contenteditable="true">
-        <p>Имя: Фомин Артём Эгидиюсович</p>
-        <p>Возраст: 17</p>
-        <p>Город: Москва</p>
+    <main>
+        <section contenteditable="true">
+            <h2>Биографические данные</h2>
+            <p><b>Имя:</b> Фомин Артём Эгидиюсович</p>
+            <p><b>Возраст:</b> 17</p>
+            <p><b>Город:</b> Москва</p>
+            <p><em>Эту секцию можно редактировать</em></p>
+        </section>
         <hr>
-        <p>Место обучения: Московский Политехнический Университет</p>
-        <p>Факультет: Информационных технологий</p>
-        <p>Группа: 201-363</p>
-        <p><em>Эту секцию можно редактировать</em></p>
+        <section contenteditable="true">
+            <h2>Университет</h2>
+            <p><b>Место обучения:</b> Московский Политехнический Университет</p>
+            <p><b>Факультет:</b> Информационных технологий</p>
+            <p><b>Группа:</b> 201-363</p>
+            <p><em>Эту секцию можно редактировать</em></p>
+        </section>
+        <hr>
+        <section>
+            <h2>Звук и видео</h2>
+            <audio controls>
+                <source src="https://filesamples.com/samples/audio/mp3/sample1.mp3" type="audio/mp3">
+            </audio>
+            <video controls loop height="320">
+                <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+            </video>
+
+        </section>
+
     </main>
     <footer>
         <hr>
